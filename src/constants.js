@@ -1,8 +1,1 @@
-console.log("dfvbkfkvb")
-console.log("dfvbkfkvb")
-console.log("dfvbkfkvb")
-console.log("dfvbkfkvb")
-console.log("dfvbkfkvb")
-console.log("dfvbkfkvb")
-console.log("dfvbkfkvb")
-console.log("dfvbkfkvb")
+export const DB_NAME = "videotube";
