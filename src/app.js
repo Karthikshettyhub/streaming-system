@@ -1,6 +1,7 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
+import { registerUser } from "./controllers/user.controller.js"
 
 const app = express()
 
@@ -18,7 +19,14 @@ app.use(cookieParser())
 //routes
 
 import userRouter from './routes/user.routes.js'
+import multer from "multer";
+const upload = multer({ dest: "uploads/" });
 
-app.use("/api/v1/users",userRouter)
+app.post("/register", upload.fields([
+  { name: "avatar", maxCount: 1 },
+  { name: "coverImage", maxCount: 1 }
+]), registerUser);
+
+app.use("/api/v1/users", userRouter)
 
 export { app }
